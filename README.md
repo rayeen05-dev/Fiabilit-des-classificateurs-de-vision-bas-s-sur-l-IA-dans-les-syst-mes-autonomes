@@ -49,7 +49,7 @@ Utilisé pour la **réinférence en précision float32** des témoins SAT, étap
 
 ---
 
-## Architecture du pipeline
+## Architecture du pipeline utilisé 
 
 Le pipeline est entièrement automatisé et composé des étapes suivantes :
 

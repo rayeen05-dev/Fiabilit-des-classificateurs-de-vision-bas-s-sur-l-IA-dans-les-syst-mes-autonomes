@@ -80,25 +80,18 @@ collect_margin_spectrum.py
     └─► Échantillonnage d'images CIFAR-10 selon un spectre de marges softmax
 ```
 
-### Formulation mathématique
 
-Pour une image `x` correctement classifiée comme `c`, le domaine de perturbation est :
 
-```
-Xε = { x' | ‖x' − x‖∞ ≤ ε }
-```
 
-La propriété pairwise vérifie si un `x'` dans ce domaine peut produire `score(t) > score(c)` pour une classe cible `t ≠ c`.
 
 ---
 
 ## Structure du dépôt
 
 ```
-neural-verification-robustness/
+
 │
 ├── README.md
-├── requirements.txt
 │
 ├── pipeline/
 │   ├── collect.py               # Sélection automatique des images à certifier
@@ -112,21 +105,11 @@ neural-verification-robustness/
 │   └── collect_margin_spectrum.py  # Échantillonnage par spectre de marge softmax
 │
 ├── models/
-│   ├── cifar10_fc.onnx          # Modèle FC substitut (3072→512→256→128→10)
 │   ├── cifar10_small.onnx       # Modèle officiel VNN-COMP
 │   └── gtsrb-10x2.onnx         # Réseau convolutionnel ReLU GTSRB (32×32×3, 10 classes)
 │
-├── data/
-│   ├── cifar10/                 # Images PNG (ex. 2402_truck.png, 8235_horse.png)
-│   └── gtsrb/                   # Tableaux NumPy au format pickle
 │
-├── properties/
-│   ├── cifar10/                 # Fichiers .vnnlib générés pour CIFAR-10
-│   └── gtsrb/                   # Fichiers .vnnlib générés pour GTSRB
 │
-├── witnesses/
-│   ├── *.npy                    # Témoins SAT (tableaux d'entrées adversariales)
-│   └── *.png                    # Témoins SAT (images adversariales)
 │
 └── results/
     ├── results.csv
